@@ -83612,7 +83612,7 @@ this.a.d.Um(2)},
 $S:0}
 A.aka.prototype={
 $0(){A.p8(this.b,!1).pS(null)
-this.a.kq("mailto:ayush@example.com?subject=Portfolio%20Inquiry")},
+this.a.kq("mailto:ayushk2s@icloud.com?subject=Portfolio%20Inquiry")},
 $S:0}
 A.xF.prototype={
 an(){return new A.Ql(null,null)}}
