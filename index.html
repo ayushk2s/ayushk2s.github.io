@@ -1,134 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Ayush Pandey — AI, Robotics &amp; Quant Research</title>
+<meta name="description" content="Portfolio of Ayush Pandey — AI, robotics &amp; defence-tech developer and quantitative trading researcher. Projects, published research and contact." />
+<meta name="theme-color" content="#05060a" />
 
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ayush Pandey — AI, Robotics &amp; Quant Research" />
+<meta property="og:description" content="AI, robotics &amp; defence-tech developer. Quantitative trading researcher. Explore projects and published research." />
+<meta property="og:image" content="assets/photo.jpg" />
+<meta name="twitter:card" content="summary" />
 
-  <base href="/">
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Ayush Portfolio - Apps | AI | Trading Bots">
+<link rel="icon" href="favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
 
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Ayush Portfolio">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="icon" type="image/png" href="favicon.png"/>
-  <title>Ayush | Portfolio</title>
-  <link rel="manifest" href="manifest.json">
-
-  <!-- 🔥 CUSTOM LOADING SCREEN STYLE -->
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: transparent;
-    }
-
-    #loadingScreen {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at center, #001114 0%, #000000 80%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: "Poppins", sans-serif;
-      z-index: 99999;
-      text-align: center;
-      transition: opacity 0.8s ease-out, visibility 1s;
-    }
-
-    .loader {
-      width: 70px;
-      height: 70px;
-      border: 6px solid #00ffee22;
-      border-top-color: #00ffee;
-      border-radius: 50%;
-      animation: spin 1s linear infinite, glow 1.5s ease-in-out infinite alternate;
-      margin-bottom: 25px;
-      filter: drop-shadow(0 0 10px #00ffee);
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes glow {
-      0% { filter: drop-shadow(0 0 2px #00ffee); }
-      100% { filter: drop-shadow(0 0 20px #00ffee); }
-    }
-
-    #loadingText {
-      color: #00ffee;
-      font-size: 22px;
-      font-weight: 600;
-      text-shadow: 0 0 12px #00ffee;
-      animation: fadeText 2s ease-in-out infinite alternate;
-      max-width: 90%;
-    }
-
-    @keyframes fadeText {
-      0% { opacity: 0.6; }
-      100% { opacity: 1; }
-    }
-
-    /* ✅ Responsive adjustments */
-    @media(max-width: 480px) {
-      .loader {
-        width: 55px;
-        height: 55px;
-      }
-      #loadingText {
-        font-size: 16px;
-      }
-    }
-  </style>
-
+<link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-<!-- 👑 EPIC CUSTOM LOADER -->
-<div id="loadingScreen">
-  <div class="loader"></div>
-  <p id="loadingText">Wait yrr, loading…</p>
+<canvas id="particles" aria-hidden="true"></canvas>
+<div class="glow-field" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#home" aria-label="Ayush Pandey — home">
+      <span class="brand-badge">AP</span>
+      <span class="brand-text">
+        <span class="brand-name">Ayush Pandey</span>
+        <span class="brand-role">AI · Robotics · Defence-Tech</span>
+      </span>
+    </a>
+    <nav class="nav-desktop" id="nav-desktop" aria-label="Primary"></nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span id="nav-toggle-icon"></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile"></nav>
+</header>
+
+<main id="main">
+
+  <section class="section hero" id="home">
+    <div class="section-inner hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="dot"></span>Available for research &amp; build collaborations</p>
+        <h1>Hi, I'm <span class="grad-text">Ayush Pandey</span></h1>
+        <p class="hero-role" id="hero-role"></p>
+        <p class="hero-tagline"></p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects <span class="icon-inline" data-icon="arrowUp"></span></a>
+          <a href="#research" class="btn btn-ghost">Read Research</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal" id="hero-visual"></div>
+    </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll to About">
+      <span data-icon="chevron"></span>
+    </a>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-inner">
+      <p class="section-kicker">01 — About</p>
+      <h2 class="section-title reveal">Who I am</h2>
+      <div class="about-grid">
+        <div class="glass-card about-card reveal">
+          <p class="about-bio" id="about-bio"></p>
+          <div class="stat-row" id="about-stats"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <p class="section-kicker">02 — Skills</p>
+      <h2 class="section-title reveal">Toolkit &amp; expertise</h2>
+      <p class="section-sub reveal">Hover or tap a card to flip it and see proficiency.</p>
+      <div class="skills-grid" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <p class="section-kicker">03 — Projects</p>
+      <h2 class="section-title reveal">Selected work</h2>
+      <p class="section-sub reveal">Trading systems, robotics, and shipped apps.</p>
+      <div class="projects-grid" id="projects-grid"></div>
+      <div class="section-cta reveal">
+        <a href="https://github.com/ayushk2s" target="_blank" rel="noopener" class="btn btn-primary">
+          <span class="icon-inline" data-icon="github"></span> View more on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="research">
+    <div class="section-inner">
+      <p class="section-kicker">04 — Research</p>
+      <h2 class="section-title reveal">Published research</h2>
+      <p class="section-sub reveal">Peer-reviewable work on leveraged trading strategy design, published on SSRN.</p>
+      <div class="research-list" id="research-list"></div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <p class="section-kicker">05 — Contact</p>
+      <h2 class="section-title reveal">Let's build something</h2>
+      <p class="section-sub reveal">Feel free to reach out — I read every message.</p>
+      <div class="contact-grid">
+        <div class="glass-card reveal">
+          <h3 class="contact-heading">Find me elsewhere</h3>
+          <div class="social-row" id="social-row"></div>
+        </div>
+        <form class="glass-card contact-form reveal" id="contact-form" action="https://formsubmit.co/816dd77be49294d5bfc2a6439aa8299b" method="POST">
+          <h3 class="contact-heading">Send a message</h3>
+          <input type="hidden" name="_subject" value="New message from portfolio site" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <label>
+            <span>Your name</span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            <span>Your email</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">
+            Send Message <span class="icon-inline" data-icon="send"></span>
+          </button>
+          <p class="form-note">Or email directly at <a href="mailto:ayushpandey85986@gmail.com">ayushpandey85986@gmail.com</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <p>&copy; <span id="year"></span> Ayush Pandey. Built with HTML, CSS &amp; JavaScript.</p>
+    <div class="footer-socials" id="footer-socials"></div>
+  </div>
+</footer>
+
+<button class="bot-fab" id="bot-fab" aria-haspopup="dialog" aria-expanded="false" aria-label="Open AURIX assistant">
+  <span data-icon="bot"></span>
+</button>
+
+<div class="bot-panel" id="bot-panel" role="dialog" aria-modal="true" aria-labelledby="bot-title" hidden>
+  <div class="bot-panel-head">
+    <span data-icon="bot" class="bot-panel-icon"></span>
+    <h3 id="bot-title">AURIX — Portfolio Assistant</h3>
+    <button id="bot-close" aria-label="Close">&times;</button>
+  </div>
+  <p>Hello, Commander. I can guide you through the lab modules. Where would you like to go?</p>
+  <div class="bot-actions">
+    <button data-goto="#skills">Show Skills</button>
+    <button data-goto="#projects">Open Projects</button>
+    <button data-goto="#research">Read Research</button>
+    <button data-goto="#contact">Contact Ayush</button>
+  </div>
 </div>
 
-<!-- FLUTTER APP BOOT -->
-<script src="flutter_bootstrap.js" async></script>
+<div id="model-modal" class="model-modal" hidden>
+  <div class="model-modal-inner">
+    <button id="model-close" class="model-close" aria-label="Close 3D viewer">&times;</button>
+    <model-viewer
+      id="model-viewer-el"
+      alt="3D portfolio model of Ayush"
+      camera-controls
+      auto-rotate
+      shadow-intensity="1"
+      exposure="1"
+      style="width:100%;height:100%;--poster-color:transparent;">
+    </model-viewer>
+  </div>
+</div>
 
-<!-- 🔥 LOADER MESSAGE ANIMATIONS + SMOOTH HIDE -->
-<script>
-  const messages = [
-    "Wait yrr, loading…",
-    "Why taking tension? 😎",
-    "Relax bro… I am coming 😁",
-    "Maybe your internet slow 🤭",
-    "Turbo mode ON… 🚀",
-    "Dreams are loading… ✨"
-  ];
-
-  let i = 0;
-  const textRef = document.getElementById("loadingText");
-
-  setInterval(() => {
-    i = (i + 1) % messages.length;
-    textRef.innerHTML = messages[i];
-  }, 2000);
-
-  // Hide when Flutter is ready
-  window.addEventListener("flutter-first-frame", function () {
-    const loader = document.getElementById("loadingScreen");
-    loader.style.opacity = "0";
-    loader.style.visibility = "hidden";
-    setTimeout(() => {
-      loader.remove();
-      document.body.style.overflow = "auto";
-    }, 1400);
-  });
-</script>
-
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
