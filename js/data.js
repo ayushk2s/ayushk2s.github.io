@@ -3,9 +3,9 @@
 
 export const PROFILE = {
   name: 'Ayush Pandey',
-  role: 'Head Quantitative Developer @ QSentia LLC',
-  tagline: 'Leading quantitative development at QSentia LLC — building intelligent systems at the edge of AI, robotics and quantitative research.',
-  bio: 'Head Quantitative Developer at QSentia LLC, and an independent researcher and builder working across AI, robotics, embedded systems and quantitative trading. First recognized as an 18-year-old innovator in 2025 — now 19, developing autonomous hardware, publishing peer-reviewable research on leveraged trading algorithms, and shipping production apps end to end. Entrepreneur at heart — driven to launch impactful companies and build technology that expands what one person can do.',
+  role: 'AI · Robotics · Defence-Tech Developer',
+  tagline: 'Building intelligent systems at the edge of AI, robotics and quantitative research.',
+  bio: 'Independent researcher and builder working across AI, robotics, embedded systems and quantitative trading. First recognized as an 18-year-old innovator in 2025 — now 19, developing autonomous hardware, publishing peer-reviewable research on leveraged trading algorithms, and shipping production apps end to end. Entrepreneur at heart — driven to launch impactful companies and build technology that expands what one person can do.',
   email: 'ayushpandey85986@gmail.com',
   stats: [
     { value: '4+', label: 'Years Building' },
