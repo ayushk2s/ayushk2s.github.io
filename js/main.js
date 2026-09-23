@@ -1,4 +1,4 @@
-import { PROFILE, SKILLS, PROJECTS, RESEARCH, SOCIALS, NAV } from './data.js';
+import { PROFILE, VENTURES, SKILLS, PROJECTS, RESEARCH, SOCIALS, NAV } from './data.js';
 import { icon } from './icons.js';
 
 /* ---------------- Nav ---------------- */
@@ -62,7 +62,7 @@ function renderHero() {
 
   const visual = document.getElementById('hero-visual');
   visual.innerHTML = `
-    <img src="assets/photo.jpg" alt="Portrait of ${PROFILE.name}" loading="lazy" />
+    <img src="assets/portrait.jpg" alt="Portrait of ${PROFILE.name}" loading="lazy" />
     <div class="visual-scrim"></div>
     <div class="visual-cta">
       ${icon('play3d', 'icon-inline')}
@@ -81,6 +81,24 @@ function renderAbout() {
       <div class="stat-value">${s.value}</div>
       <div class="stat-label">${s.label}</div>
     </div>
+  `).join('');
+}
+
+/* ---------------- Ventures ---------------- */
+function renderVentures() {
+  const grid = document.getElementById('ventures-grid');
+  grid.innerHTML = VENTURES.map((v, i) => `
+    <a class="glass-card venture-card reveal" href="${v.link}" target="_blank" rel="noopener" style="transition-delay:${i * 60}ms">
+      <span class="venture-badge">${icon('spark', 'icon-inline')} Founder</span>
+      <div class="project-title-row">
+        <h3 class="venture-name">${v.name}</h3>
+        <span class="project-link-icon">${icon('external')}</span>
+      </div>
+      <p class="venture-tagline">${v.tagline}</p>
+      <p class="project-desc">${v.desc}</p>
+      <div class="project-tags">${v.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>
+      <span class="venture-url">${v.link.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
+    </a>
   `).join('');
 }
 
@@ -322,6 +340,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 renderNav();
 renderHero();
 renderAbout();
+renderVentures();
 renderSkills();
 renderProjects();
 renderResearch();

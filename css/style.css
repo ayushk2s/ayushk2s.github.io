@@ -196,7 +196,7 @@ button { font: inherit; cursor: pointer; }
   border: 1px solid var(--border); background: linear-gradient(160deg, rgba(0,240,255,0.06), rgba(123,97,255,0.05));
   display: grid; place-items: center; cursor: pointer;
 }
-.hero-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; opacity: 0.92; }
+.hero-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 20%; opacity: 0.92; }
 .hero-visual .visual-scrim {
   position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 40%, rgba(5,6,10,0.85) 100%);
@@ -231,6 +231,18 @@ button { font: inherit; cursor: pointer; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .stat-item .stat-label { font-size: 12.5px; color: var(--text-faint); margin-top: 2px; }
+
+/* ---------- Ventures ---------- */
+.ventures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.venture-card { display: flex; flex-direction: column; gap: 10px; }
+.venture-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+.venture-badge {
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--cyan); display: inline-flex; align-items: center; gap: 8px;
+}
+.venture-name { font-family: var(--font-head); font-weight: 700; font-size: 24px; margin: 0; }
+.venture-tagline { margin: 0; font-weight: 600; font-size: 14.5px; color: var(--text); }
+.venture-url { font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); }
 
 /* ---------- Skills ---------- */
 .skills-grid {

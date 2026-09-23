@@ -18,6 +18,7 @@ export const PROFILE = {
 export const SKILLS = [
   { name: 'Python', icon: 'code', level: 95 },
   { name: 'Flutter / Dart', icon: 'mobile', level: 98 },
+  { name: 'AI · Machine Learning', icon: 'spark', level: 75 },
   { name: 'Quant Trading', icon: 'trending', level: 72 },
   { name: 'TensorFlow', icon: 'chart', level: 60 },
   { name: 'C++', icon: 'cpu', level: 58 },
@@ -26,6 +27,23 @@ export const SKILLS = [
   { name: 'Robotis', icon: 'robot', level: 26 },
   { name: 'Rust', icon: 'wrench', level: 25 },
   { name: 'ROS', icon: 'settings', level: 22 },
+];
+
+export const VENTURES = [
+  {
+    name: 'AMSTOS',
+    tagline: 'AI Portfolio Intelligence System',
+    desc: 'An AI-powered portfolio intelligence platform that analyzes holdings, surfaces risk and delivers data-driven insights to help investors make smarter decisions.',
+    link: 'https://amstos.com/',
+    tags: ['AI', 'FinTech', 'Portfolio Analytics'],
+  },
+  {
+    name: 'MeriGrow',
+    tagline: 'A Prop Firm',
+    desc: 'A proprietary trading firm that evaluates and funds skilled traders — giving them access to firm capital with clear rules, risk management and profit sharing.',
+    link: 'https://merigrow.netlify.app/',
+    tags: ['Prop Trading', 'FinTech'],
+  },
 ];
 
 export const PROJECTS = [
@@ -155,6 +173,7 @@ export const SOCIALS = [
 
 export const NAV = [
   { label: 'About', href: '#about' },
+  { label: 'Ventures', href: '#ventures' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Research', href: '#research' },
