@@ -145,6 +145,7 @@ function renderProjects() {
   grid.innerHTML = PROJECTS.map((p, i) => {
     const tags = p.tags.map(t => `<span class="project-tag">${t}</span>`).join('');
     const inner = `
+      ${p.recent ? `<span class="venture-badge">${icon('spark', 'icon-inline')} Recent</span>` : ''}
       <div class="project-title-row">
         <h3 class="project-title">${p.title}</h3>
         ${p.link ? `<span class="project-link-icon">${icon('external')}</span>` : ''}
@@ -152,7 +153,7 @@ function renderProjects() {
       <p class="project-desc">${p.desc}</p>
       <div class="project-tags">${tags}</div>
     `;
-    const cls = 'glass-card project-card reveal';
+    const cls = `glass-card project-card reveal${p.recent ? ' project-card--recent' : ''}`;
     const delay = `style="transition-delay:${i * 50}ms"`;
     return p.link
       ? `<a class="${cls}" href="${p.link}" target="_blank" rel="noopener" ${delay}>${inner}</a>`

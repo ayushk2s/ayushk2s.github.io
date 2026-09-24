@@ -48,10 +48,25 @@ export const VENTURES = [
 
 export const PROJECTS = [
   {
+    title: 'Futures Curve Intelligence Engine',
+    desc: 'Reconstructs a futures curve, prices it from first principles (fitted carry curve), flags where the market disagrees, and backtests the trade across Gold, BTC & ETH — with regime detection, walk-forward ML forecasts, a realistic cost model and a Streamlit dashboard.',
+    link: 'https://github.com/ayushk2s/Future_Curve_Intelligence_Engine',
+    tags: ['Python', 'Quant Research', 'ML', 'Futures'],
+    recent: true,
+  },
+  {
+    title: 'NIFTY / BANKNIFTY Options Backtest Study',
+    desc: 'A 2020–2024 backtest of weekly Indian index options strategies on 1-minute data with a full Indian cost model (STT, GST, stamp, slippage) — including a worked example of how look-ahead bias turns a losing strategy into a fake 100% win rate.',
+    link: 'https://github.com/ayushk2s/IndianOptionsStrategy',
+    tags: ['Python', 'Options', 'Backtesting'],
+    recent: true,
+  },
+  {
     title: 'MSR-Algorithm',
-    desc: 'A Dart-based algorithmic crypto futures trading bot combining SFI trend-following and Support/Resistance zone breakout strategies across Asterdex and MEXC exchanges.',
+    desc: 'A Dart-based multi-strategy crypto futures bot for Asterdex and MEXC, built on custom SFI trend-following and Support/Resistance zone indicators — with DCA grids, trailing stops, ATR take-profits, a backtesting engine and walk-forward out-of-sample validation.',
     link: 'https://github.com/ayushk2s/My-MSR-related-stratagies',
     tags: ['Dart', 'Trading', 'Crypto'],
+    recent: true,
   },
   {
     title: 'G-Algorithm',
